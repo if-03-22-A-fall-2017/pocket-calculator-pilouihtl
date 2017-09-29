@@ -1,0 +1,58 @@
+#include <stdio.h>
+int main(int argc, char arg[])
+{
+  double first_operand;
+  double second_operand;
+  int choice;
+  int yes_or_no;
+  do{
+    printf("Choose one of the following options: \n");
+    printf("   Add (1) \n");
+    printf("   Subtract (2) \n");
+    printf("   Multiply (3) \n");
+    printf("   Divide (4) \n");
+    printf("   Stop program (-1) \n");
+    printf("Enter your choice: ");
+    scanf("%d", choice);
+    choice = check_choice(choice);
+    
+  }while(yes_or_no != 0);
+
+
+
+  return 0;
+}
+int check_choice(int choice){
+    if(choice > 4 || choice < -1 || choice == 0){
+      printf("Input not allowed, please try again \n");
+      yes_or_no == 0;
+    }
+    else{
+      printf("Please enter the first operand: ");
+      scanf("%f", &first_operand);
+      printf("Please enter the second operand: ");
+      scanf("%f", &second_operand);
+      switch(choice)
+      {
+        case 1: yes_or_no == Add();
+        break;
+        case 2: yes_or_no == Subtract();
+        break;
+        case 3: yes_or_no == Multiply();
+        break;
+        case 4: yes_or_no == Divide();
+        break;
+        case -1: yes_or_no == 0;
+        break;
+      }
+    }
+    return choice;
+}
+
+int Add(double first_operand, double second_operand){
+  int sum = first_operand + second_operand;
+  printf(sum);
+  printf("Try again with 1/ not with 0: ");
+  scanf("%d", &yes_or_no);
+  return yes_or_no;
+}
